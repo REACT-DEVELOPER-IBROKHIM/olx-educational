@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { FiHeart } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { shortenProductDescription } from '../../helpers/product-content';
 
 const Product = ({product}) => {
+  const dispatch = useDispatch();
+  const addToWishlist = () => {
+    dispatch({ product, type: "ADD_TO_WISHLIST" })
+  }
+
   return (
     <article className="product">
       <div className="product-top">
@@ -21,7 +27,7 @@ const Product = ({product}) => {
           <p>{shortenProductDescription("word", 5, product.description)}</p>
           <strong>${product.price}</strong>
         </div>
-        <FiHeart />
+        <FiHeart  onClick={addToWishlist}/>
       </div>
     </article>
   );
