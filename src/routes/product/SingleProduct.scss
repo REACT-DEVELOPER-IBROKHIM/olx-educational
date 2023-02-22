@@ -1,0 +1,26 @@
+.single-product__wrapper{
+  background-color: #fff;
+}
+
+.single-product__item{
+  display: flex;
+  gap: 0px 30px;
+
+  .single-product__info{
+    h1{
+      font-size: 50px;
+    }
+
+    p{
+      margin: 30px 0;
+      font-size: 20px;
+      color: gray;
+    }
+
+    strong{
+      font-size: 30px;
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+}

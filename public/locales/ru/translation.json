@@ -1,0 +1,7 @@
+{
+  "header_message" : "Сообщения",
+  "header_account" : "Кабинет",
+  "search" : {
+    "placeholder" : "Поиск продуктов"
+  }
+}

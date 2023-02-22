@@ -1,0 +1,34 @@
+header{
+  background-color: #002f34;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.header-wrapper{
+  display: flex;
+}
+
+.header__logo{
+  flex: 1;
+}
+
+.header__logo > img{
+  height: 60px;
+}
+
+.header-wrapper > nav{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 0 30px;
+}
+
+.header__language-select{
+  display: flex;
+  gap: 0 10px;
+}
