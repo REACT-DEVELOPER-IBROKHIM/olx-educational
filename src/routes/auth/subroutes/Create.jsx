@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { instance } from '../../../api/instance';
 import { useNavigate } from 'react-router-dom';
-import { auth, provider } from '../../../firebase/firebase';
 
 const Create = () => {
   const navigate = useNavigate();
@@ -27,9 +26,7 @@ const Create = () => {
   console.log(userData)
 
   const createUserWithGoogle = () => {
-    auth.signInWithPopup(provider)
-      .then(response => console.log(response))
-      .catch(err => console.log(err))
+    
   }
   return (
     <div>

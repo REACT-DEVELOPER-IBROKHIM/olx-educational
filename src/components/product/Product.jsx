@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { FiHeart } from "react-icons/fi";
-import { useDispatch } from "react-redux";
+import {BsFillSuitHeartFill} from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
 import { shortenProductDescription } from '../../helpers/product-content';
 
 const Product = ({product}) => {
@@ -10,6 +11,11 @@ const Product = ({product}) => {
     dispatch({ product, type: "ADD_TO_WISHLIST" })
   }
 
+  const removeFromWishlist = () => {
+    dispatch({id: product.id, type: "REMOVE_FROM_WISHLIST"})
+  }
+
+  const dataInStore = useSelector(data => data);
   return (
     <article className="product">
       <div className="product-top">
@@ -27,7 +33,7 @@ const Product = ({product}) => {
           <p>{shortenProductDescription("word", 5, product.description)}</p>
           <strong>${product.price}</strong>
         </div>
-        <FiHeart  onClick={addToWishlist}/>
+        {dataInStore.like.likedProducts.find(p => p?.id === product?.id) ? <BsFillSuitHeartFill onClick={removeFromWishlist} style={{color: "red"}}/> : <FiHeart  onClick={addToWishlist}/>}
       </div>
     </article>
   );

@@ -21,6 +21,12 @@ const wishlistReducer = (state = wishlistInitialState, action) => {
       return {
         likedProducts: [...state.likedProducts, action.product]
       }
+    case "REMOVE_FROM_WISHLIST":
+      const indexOfDeleteProduct = state.likedProducts.findIndex(p => p.id === action.id);
+      state.likedProducts.splice(indexOfDeleteProduct, 1);
+      return {
+        likedProducts: [...state.likedProducts]
+      }
     default:
       return state
   }
